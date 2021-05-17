@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/warpedrhubarb/html-generator#readme",
   "devDependencies": {
-    "@hexlet/pairs-data": "^1.1.1",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -32,6 +31,8 @@
     "testRunner": "jest-circus/runner"
   },
   "dependencies": {
-    "@hexlet/pairs": "^1.1.1"
+    "@hexlet/pairs": "^1.1.1",
+    "@hexlet/html-tags": "^1.0.2",
+    "@hexlet/pairs-data": "^1.1.1"
   }
 }
