@@ -1,0 +1,37 @@
+{
+  "type": "module",
+  "version": "0.1.0",
+  "description": "HTML Generator",
+  "scripts": {
+    "test": "npx node --experimental-vm-modules node_modules/.bin/jest --bail",
+    "testWatch": "npx jest --watch --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warpedrhubarb/html-generator.git"
+  },
+  "author": "warpedrhubarb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/warpedrhubarb/html-generator/issues"
+  },
+  "homepage": "https://github.com/warpedrhubarb/html-generator#readme",
+  "devDependencies": {
+    "@hexlet/pairs-data": "^1.1.1",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^23.9.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "jest-cli": "^26.6.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "testRunner": "jest-circus/runner"
+  },
+  "dependencies": {
+    "@hexlet/pairs": "^1.1.1"
+  }
+}
