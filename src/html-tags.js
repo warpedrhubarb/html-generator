@@ -83,3 +83,33 @@ export const removeHeaders = (elements) => {
   }
   return consList(element, removeHeaders(tailElements));
 };
+
+export const reduce = (func, acc, elements) => {
+  if (isEmpty(elements)) {
+    return acc;
+  }
+
+  const current = head(elements);
+  const tailElements = tail(elements);
+  const newAcc = func(current, acc) ? func(current, acc) : acc;
+
+  return reduce(func, newAcc, tailElements);
+};
+
+export const emptyTagsCount = (tag, elements) => {
+  const countEmpty = (element, acc) => (is(tag, element) && getValue(element) === '' ? acc + 1 : acc);
+  return reduce(countEmpty, 0, elements);
+};
+
+export const headersCount = (tagName, elements) => {
+  const iter = (items, acc) => {
+    if (isEmpty(items)) {
+      return acc;
+    }
+
+    const item = head(items);
+    const newAcc = is(tagName, item) ? acc + 1 : acc;
+    return iter(tail(items), newAcc);
+  };
+  return iter(elements, 0);
+};
