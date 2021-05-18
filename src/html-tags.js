@@ -49,3 +49,37 @@ export const b2p = (elements) => {
 
   return consList(newElement, b2p(tail(elements)));
 };
+
+export const filter = (func, elements) => {
+  if (isEmpty(elements)) {
+    return l();
+  }
+
+  const current = head(elements);
+  const tailElements = tail(elements);
+
+  if (func(current)) {
+    return consList(current, filter(func, tailElements));
+  }
+
+  return filter(func, tailElements);
+};
+
+export const quotes = (elements) => {
+  const filtered = filter((element) => is('blockquote', element), elements);
+
+  return map((element) => getValue(element), filtered);
+};
+
+export const removeHeaders = (elements) => {
+  if (isEmpty(elements)) {
+    return l();
+  }
+
+  const element = head(elements);
+  const tailElements = tail(elements);
+  if (is('h1', element)) {
+    return removeHeaders(tailElements);
+  }
+  return consList(element, removeHeaders(tailElements));
+};
