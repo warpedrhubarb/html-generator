@@ -4,6 +4,7 @@ import {
 } from '@hexlet/pairs-data';
 import { is } from '@hexlet/html-tags';
 import { reverse as reverseStr } from './strings.js';
+import wc from './utils.js';
 
 export const make = () => l();
 export const node = (tag, body) => cons(tag, body);
@@ -112,4 +113,15 @@ export const headersCount = (tagName, elements) => {
     return iter(tail(items), newAcc);
   };
   return iter(elements, 0);
+};
+
+export const extractHeaders = (elements) => {
+  const filtered = filter((element) => is('h2', element), elements);
+  return map((element) => node('p', getValue(element)), filtered);
+};
+
+export const wordsCount = (tag, word, elements) => {
+  const filtered = filter((element) => is(tag, element), elements);
+  const inside = (element) => wc(word, getValue(element));
+  return reduce((element, acc) => acc + inside(element), 0, filtered);
 };
