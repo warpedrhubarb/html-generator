@@ -31,8 +31,8 @@
     "testRunner": "jest-circus/runner"
   },
   "dependencies": {
-    "@hexlet/pairs": "^1.1.1",
     "@hexlet/html-tags": "^1.0.2",
+    "@hexlet/pairs": "^1.1.1",
     "@hexlet/pairs-data": "^1.1.1"
   }
 }
